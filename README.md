@@ -11,9 +11,10 @@ image-name [:image-tag]
 ```bat
 sudo docker container run   -d \
                             --name=postresql-container \
+                            -p 5432:5432 \
                             -e POSTGRES_PASSWORD=Qwer1234 \
                             -e POSTGRES_USER=rickyfok \
-                            -e POSTGRES_DB=creditcard
+                            -e POSTGRES_DB=crypto \
                             -e PGDATA=/pgdata \
                             -v /home/rickyfok/database/postgres:/pgdata \
                             --network nginx-net \
@@ -35,10 +36,11 @@ sudo docker container run   -d \
                             --name=postresql-container \
                             -e POSTGRES_PASSWORD=Qwer1234 \
                             -e POSTGRES_USER=rickyfok \
-                            -e POSTGRES_DB=creditcard \
+                            -e POSTGRES_DB=crypto \
                             -e PGDATA=/pgdata \
                             -v /home/rickyfok/database/postgres:/pgdata \
                             --network nginx-net \
+                            -p 5432:5432 \
                             postgres:12.2-alpine
 ```
 
